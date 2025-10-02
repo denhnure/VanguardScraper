@@ -1,5 +1,4 @@
 const puppeteer = require('puppeteer');
-const fs = require('fs');
 const nodemailer = require('nodemailer');
 
 // Load environment variables from .env.local file for local development
@@ -269,11 +268,6 @@ class VanguardPuppeteerScraper {
         
         console.log(`Last Updated: ${new Date().toLocaleString()}`);
         console.log('='.repeat(50));
-
-        // Save to JSON file
-        const filename = 'vanguard_fund_data.json';
-        fs.writeFileSync(filename, JSON.stringify(data, null, 2));
-        console.log(`\nData saved to ${filename}`);
 
         return data;
     }
