@@ -2,8 +2,8 @@ name: Vanguard Fund Scraper
 
 on:
   schedule:
-    # Run every hour during market hours (9 AM - 5 PM UTC, Mon-Fri)
-    - cron: '0 9-17 * * 1-5'
+    # Run once per day at 9 AM UTC, Tuesday-Saturday
+    - cron: '0 9 * * 2-6'
   workflow_dispatch: # Allow manual triggering
 
 jobs:
