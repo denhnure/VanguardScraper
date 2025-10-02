@@ -28,6 +28,11 @@ jobs:
     
     - name: Run scraper
       run: node vanguard_puppeteer_scraper.js
+      env:
+        env:
+          EMAIL_USER: ${{ secrets.EMAIL_USER }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+          RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL }}
     
     - name: Commit and push results
       run: |
